@@ -1,0 +1,26 @@
+#include<iostream>															//導入標頭檔
+#include<cstring>
+using namespace std;
+
+int main() {
+	int Input_h, Input_m, Input_s;											//建立輸入變數 小時Input_h,分鐘Input_m,秒Input_s
+	int num;												   				//建立變數num,sum
+	int sum = 0;                                                            //執行2次
+	for (int i = 0; i < 2; i++) {
+		cout << "請輸入時間:\n", i;										    //讀取 Input_h,Input_m,Input_s
+		cin  >>  Input_h >> Input_m >> Input_s ;							//顯示時間
+		cout << Input_h << "時 "<< Input_m << "分" << Input_s <<" 秒\n" ;   //計算時間差
+		num = (Input_h * 3600) + (Input_m * 60) + (Input_s);				//把時間轉換成秒
+		if (i == 1) {
+			num *= -1;														//第二次執行時把變成以負數
+			sum += num;														//時間相減sum=sum+(-num)
+			break;															//結束迴圈
+		}
+		sum += num;
+	}
+	cout << "時間相差" << sum << "秒\n";
+	system("pause");
+	return 0;
+
+
+}
